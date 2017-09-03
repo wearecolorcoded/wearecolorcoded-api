@@ -10,7 +10,7 @@ module.exports = function (app, passport) {
 
   app.route('/login')
     .get((req, res, next) => res.render('login.ejs'))
-    .post(passport.authenticate('local'), (req, res, next) => res.render('login.ejs'));
+    .post(passport.authenticate('local'), (req, res, next) => res.redirect('/'));
 
   app.route('/logout')
     .get((req, res, next) => {
