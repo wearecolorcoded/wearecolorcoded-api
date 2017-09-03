@@ -1,43 +1,47 @@
 'use strict';
 
 const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+const mongooseStringQuery = require('mongoose-string-query');
+const timestamps = require('mongoose-timestamp');
 
-const EventSchema = new Schema({
+const EventSchema = new mongoose.Schema({
   name: {
     type: String,
-    requried: true,
+    required: true,
   },
   description: {
     type: String,
-    requried: true,
+    required: true,
   },
   startDateTime: {
     type: Date,
-    requried: true,
+    required: true,
   },
   endDateTime: {
     type: Date,
-    requried: true,
+    required: true,
   },
   location: {
     name: {
       type: String,
-      requried: true,
+      required: true,
     },
     address: {
       type: String,
-      requried: true,
+      required: true,
     },
   },
   imageURL: {
     type: String,
-    requried: true,
+    required: true,
   },
   registrationLink: {
     type: String,
-    requried: true,
+    required: true,
   },
 });
 
-module.exports = mongoose.model('Events', EventSchema);
+EventSchema.plugin(timestamps);
+EventSchema.plugin(mongooseStringQuery);
+
+module.exports = mongoose.model('Event', EventSchema);
