@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const mongooseStringQuery = require('mongoose-string-query');
 const timestamps = require('mongoose-timestamp');
 
-const EventSchema = new mongoose.Schema({
+const Event = new mongoose.Schema({
   name: {
     type: String,
     required: true,
@@ -41,7 +41,7 @@ const EventSchema = new mongoose.Schema({
   },
 });
 
-EventSchema.plugin(timestamps);
-EventSchema.plugin(mongooseStringQuery);
+Event.plugin(timestamps);
+Event.plugin(mongooseStringQuery);
 
-module.exports = mongoose.model('Event', EventSchema);
+module.exports = mongoose.model('Event', Event);
