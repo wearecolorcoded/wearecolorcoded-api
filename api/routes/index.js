@@ -9,14 +9,21 @@ module.exports = function (app, passport) {
   const Users = require('../controllers/users');
 
   app.route('/')
-    .get(isLoggedIn, (req, res, next) => res.render('index.ejs'));
+    .get(isLoggedIn, (req, res, next) => res.render('index.ejs', { user: req.user }));
 
   app.route('/login')
     .get((req, res, next) => res.render('login.ejs'))
     .post(passport.authenticate('local'), (...args) => Users.login(...args));
 
   app.route('/logout')
-    .post(isLoggedIn, (...args) => Users.logout(...args));
+    .get(isLoggedIn, (...args) => Users.logout(...args));
+
+  app.route('/eventList')
+    .get((...args) => Events.eventList(...args));
+
+  app.route('/event')
+    .get(isLoggedIn, (...args) => Events.getEventForm(...args))
+    .post(isLoggedIn, (...args) => Events.create(...args));
 
   app.route('/ping')
     .get((req, res) => res.status(200).send('pong!'));

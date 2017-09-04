@@ -17,7 +17,6 @@ const cookieParser = require('cookie-parser');
 const morgan = require('morgan');
 const logger = require('winston');
 const path = require('path');
-// const cors = require('cors');
 
 logger.info('[APP] Starting server initialization');
 const app = express();
@@ -51,9 +50,6 @@ mongoose.connect(`mongodb://${MONGO_DB_HOST}/${MONGO_DB_NAME}`, { useMongoClient
     passport.use(UserModel.createStrategy());
     passport.serializeUser(UserModel.serializeUser());
     passport.deserializeUser(UserModel.deserializeUser());
-
-    // use it before all route definitions
-    // app.use(cors({ origin: 'http://localhost:3000' }));
 
     // Routes
     logger.info('[SERVER] Initializing routes');
