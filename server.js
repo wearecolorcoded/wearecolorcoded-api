@@ -43,7 +43,6 @@ mongoose.connect(`mongodb://${MONGO_DB_HOST}/${MONGO_DB_NAME}`, { useMongoClient
 
     logger.info('[SERVER] Initializing Models');
     const UserModel = require('./api/models/User');
-    require('./api/models/Event');
 
     // passport config
     logger.info('[SERVER] Initializing passport');
