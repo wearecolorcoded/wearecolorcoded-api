@@ -2,6 +2,9 @@
   "name": "wearecolorcoded-api",
   "version": "1.0.0",
   "description": "wearecolorcoded.us site's api",
+   "engines": {
+    "node": "8.4.x"
+  },
   "main": "index.js",
   "pre-commit": [
     "lint"
