@@ -53,7 +53,6 @@ mongoose.connect(`mongodb://${MONGO_DB_HOST}/${MONGO_DB_NAME}`, { useMongoClient
 
     // Routes
     logger.info('[SERVER] Initializing routes');
-    app.use('/api', require('./api/middleware/isLoggedIn'));
     const routes = require('./api/routes/index'); // importing routes
     routes(app, passport);
 

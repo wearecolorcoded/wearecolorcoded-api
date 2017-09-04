@@ -2,6 +2,8 @@
 
 const isLoggedIn = require('../middleware/isLoggedIn');
 
+const API = '/api/v1';
+
 module.exports = function (app, passport) {
   const Events = require('../controllers/events');
 
@@ -13,7 +15,7 @@ module.exports = function (app, passport) {
     .post(passport.authenticate('local'), (req, res, next) => res.redirect('/'));
 
   app.route('/logout')
-    .get((req, res, next) => {
+    .get(isLoggedIn, (req, res, next) => {
       req.logout();
       res.redirect('/login');
     });
@@ -22,12 +24,12 @@ module.exports = function (app, passport) {
     .get((req, res) => res.status(200).send('pong!'));
 
   // event Routes
-  app.route('/api/events')
+  app.route(`${API}/events`)
     .get((...args) => Events.get(...args))
-    .post((...args) => Events.create(...args));
+    .post(isLoggedIn, (...args) => Events.create(...args));
 
-  app.route('/api/events/:id')
+  app.route(`${API}/events/:id`)
     .get((...args) => Events.getById(...args))
-    .put((...args) => Events.updateById(...args))
-    .delete((...args) => Events.deleteById(...args));
+    .put(isLoggedIn, (...args) => Events.updateById(...args))
+    .delete(isLoggedIn, (...args) => Events.deleteById(...args));
 };

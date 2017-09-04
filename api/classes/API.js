@@ -1,17 +1,32 @@
 'use strict';
 
 const mongoose = require('mongoose');
+const packageJSON = require('../../package.json');
 
 module.exports = class API {
   constructor (model) {
     this.Model = mongoose.model(model);
   }
 
+  async apiResHandler (res, data) {
+    const date = new Date();
+    const response = {
+      version: packageJSON.version,
+      datetime: date,
+      timestamp: date.valueOf(),
+      status: 'success',
+      code: res.statusCode,
+      data,
+    };
+
+    res.json(response);
+  }
+
   async get (req, res, next) {
     try {
       const records = await this.Model.apiQuery(req.query);
 
-      res.json(records);
+      this.apiResHandler(res, records);
     } catch (error) {
       next(error);
     }
@@ -22,7 +37,7 @@ module.exports = class API {
       const record = new this.Model(req.body);
       const newRecord = await record.save();
 
-      res.json(newRecord);
+      this.apiResHandler(res, newRecord);
     } catch (error) {
       next(error);
     }
@@ -32,7 +47,7 @@ module.exports = class API {
     try {
       const record = await this.Model.findById(req.params.id);
 
-      res.json(record);
+      this.apiResHandler(res, record);
     } catch (error) {
       next(error);
     }
@@ -52,7 +67,7 @@ module.exports = class API {
 
       const record = await this.Model.findOneAndUpdate({ _id }, data, opts);
 
-      res.send(200, record);
+      this.apiResHandler(res, record);
     } catch (error) {
       next(error);
     }
@@ -61,9 +76,9 @@ module.exports = class API {
     const _id = req.params.id;
 
     try {
-      await this.Model.remove({ _id });
+      const deletedRecord = await this.Model.remove({ _id });
 
-      res.json({ message: 'Task succesfully deleted' });
+      this.apiResHandler(res, deletedRecord);
     } catch (error) {
       next(error);
     }
