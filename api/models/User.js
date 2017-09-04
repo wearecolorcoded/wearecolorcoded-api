@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const passportLocalMongoose = require('passport-local-mongoose');
 const timestamps = require('mongoose-timestamp');
 
-var User = new mongoose.Schema({
+const User = new mongoose.Schema({
   // passportLocalMongoose adds a username, hash and salt
 });
 
