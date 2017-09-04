@@ -16,7 +16,7 @@ module.exports = (err, req, res, next) => {
     timestamp: date.valueOf(),
     status: 'error',
     code: res.statusCode,
-    data: {},
+    data: null,
     error: err.message,
   };
 

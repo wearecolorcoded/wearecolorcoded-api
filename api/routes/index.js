@@ -6,19 +6,17 @@ const API = '/api/v1';
 
 module.exports = function (app, passport) {
   const Events = require('../controllers/events');
+  const Users = require('../controllers/users');
 
   app.route('/')
     .get(isLoggedIn, (req, res, next) => res.render('index.ejs'));
 
   app.route('/login')
     .get((req, res, next) => res.render('login.ejs'))
-    .post(passport.authenticate('local'), (req, res, next) => res.redirect('/'));
+    .post(passport.authenticate('local'), (...args) => Users.login(...args));
 
   app.route('/logout')
-    .get(isLoggedIn, (req, res, next) => {
-      req.logout();
-      res.redirect('/login');
-    });
+    .post(isLoggedIn, (...args) => Users.logout(...args));
 
   app.route('/ping')
     .get((req, res) => res.status(200).send('pong!'));
