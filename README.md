@@ -1,3 +1,13 @@
+# Color Coded API
+
+### Prerequisites
+
+What things you need to install the software and how to install them
+
+* [node](https://nodejs.org/en/download/) `>=8.0.0`
+* [yarn](https://yarnpkg.com/en/docs/install) `>=1.0.0`
+* [MongoDB](https://docs.mongodb.com/manual/administration/install-community/) `~3.4.x`
+
 # Install Dependencies
 `yarn install`
 
