@@ -4,7 +4,7 @@
 require('dotenv').load();
 const {
   // NODE_ENV,
-  PORT,
+  NODE_PORT,
   MONGO_DB_HOST,
   MONGO_DB_NAME,
 } = process.env;
@@ -61,8 +61,8 @@ mongoose.connect(`mongodb://${MONGO_DB_HOST}/${MONGO_DB_NAME}`, { useMongoClient
     app.use(require('./api/middleware/errorHandler'));
     app.use(require('./api/middleware/404'));
 
-    app.listen(PORT);
-    logger.info(`[SERVER] Listening on port ${PORT}`);
+    app.listen(NODE_PORT);
+    logger.info(`[SERVER] Listening on port ${NODE_PORT}`);
   })
   .catch((err) => {
     logger.error(`[APP] Failed to start. ${err}`);

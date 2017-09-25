@@ -9,17 +9,21 @@ const Event = new mongoose.Schema({
     type: String,
     required: true,
   },
+  type: {
+    type: String,
+    required: false,
+  },
   description: {
     type: String,
     required: true,
   },
   startDateTime: {
     type: Date,
-    required: true,
+    required: false,
   },
   endDateTime: {
     type: Date,
-    required: true,
+    required: false,
   },
   location: {
     name: {
@@ -33,11 +37,44 @@ const Event = new mongoose.Schema({
   },
   imageURL: {
     type: String,
-    required: true,
+    required: false,
   },
   registrationLink: {
     type: String,
-    required: true,
+    required: false,
+  },
+  partners: [
+    {
+      name: {
+        type: String,
+        required: false,
+      },
+      URL: {
+        type: String,
+        required: false,
+      },
+    },
+  ],
+  sponsors: [
+    {
+      name: {
+        type: String,
+        required: false,
+      },
+      URL: {
+        type: String,
+        required: false,
+      },
+    },
+  ],
+  recapURL: {
+    type: String,
+    required: false,
+  },
+  TBD: {
+    type: Boolean,
+    required: false,
+    default: false,
   },
 });
 
