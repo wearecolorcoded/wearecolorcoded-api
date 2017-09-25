@@ -5,7 +5,7 @@ module.exports = {
   data: [
     {
       name: 'CREATE AND COFFEE',
-      description: 'Come through, work on personal projects, connect with creatives in or out of tech.',
+      details: 'Come through, work on personal projects, connect with creatives in or out of tech.',
       startDateTime: new Date('September 13, 2017 18:30'),
       endDateTime: new Date('September 13, 2017 20:00'),
       location: {
@@ -15,7 +15,7 @@ module.exports = {
     },
     {
       name: 'CROSSROADS: INTERSECTIONAL FEMINISM AND UX DESIGN',
-      description: `Back by popular demand and taught by <a href="https://twitter.com/@superbhatt">Radhika Bhatt</a>, this workshop will discuss the tenets of user experience design and how they relate to the theory of intersectional feminism. Get ready to learn UX, meet new people, and problem solve!`,
+      details: `Back by popular demand and taught by <a href="https://twitter.com/@superbhatt">Radhika Bhatt</a>, this workshop will discuss the tenets of user experience design and how they relate to the theory of intersectional feminism. Get ready to learn UX, meet new people, and problem solve!`,
       startDateTime: new Date('September 13, 2017 18:30'),
       endDateTime: new Date('September 13, 2017 20:00'),
       location: {
@@ -25,7 +25,7 @@ module.exports = {
     },
     {
       name: 'MEETUP: CREATE AND COFFEE',
-      description: 'Come through, work on personal projects, connect with creatives and tech folks. Free coffee and tea + brunch starts at 10:30am.',
+      details: 'Come through, work on personal projects, connect with creatives and tech folks. Free coffee and tea + brunch starts at 10:30am.',
       startDateTime: new Date('August 12, 2017 09:00'),
       endDateTime: new Date('August 12, 2017 12:00'),
       location: {
@@ -35,7 +35,7 @@ module.exports = {
     },
     {
       name: 'CROSSROADS: INTERSECTIONAL FEMINISM AND UX DESIGN',
-      description: `Taught by <a href="https://twitter.com/@superbhatt">Radhika Bhatt</a>, this workshop will discuss the tenets of user experience design and how they relate to the theory of intersectional feminism. Get ready to learn UX, meet new people, and problem solve!`,
+      details: `Taught by <a href="https://twitter.com/@superbhatt">Radhika Bhatt</a>, this workshop will discuss the tenets of user experience design and how they relate to the theory of intersectional feminism. Get ready to learn UX, meet new people, and problem solve!`,
       startDateTime: new Date('August 9, 2017 18:30'),
       endDateTime: new Date('August 9, 2017 20:00'),
       location: {
@@ -45,7 +45,7 @@ module.exports = {
     },
     {
       name: 'WORKSHOP: INTERVIEW PREP',
-      description: `Stay sharp and join us on July 25th for a mock technical interview. Lead engineers will walk us through interview questions and problems. Open to software engineers of all levels.`,
+      details: `Stay sharp and join us on July 25th for a mock technical interview. Lead engineers will walk us through interview questions and problems. Open to software engineers of all levels.`,
       startDateTime: new Date('July 25, 2017 18:30'),
       endDateTime: new Date('July 25, 2017 20:00'),
       location: {
@@ -65,7 +65,7 @@ module.exports = {
     },
     {
       name: 'PANEL: HIRING IN TECH & EQUITABLE PRACTICES',
-      description: `Join us and AIGA-DC as our panelists discuss hiring and creating safe workspaces in tech.`,
+      details: `Join us and AIGA-DC as our panelists discuss hiring and creating safe workspaces in tech.`,
       startDateTime: new Date('April 27, 2017 19:00'),
       endDateTime: new Date('April 27, 2017 20:30'),
       location: {
@@ -87,7 +87,7 @@ module.exports = {
     },
     {
       name: 'COLOR CODED UNHACKATHON',
-      description: `A weekend of stress-free collaboration, creativity, and self-care.`,
+      details: `A weekend of stress-free collaboration, creativity, and self-care.`,
       startDateTime: new Date('November 15, 2017 10:00'),
       endDateTime: new Date('November 16, 2017 16:00'),
       location: {
@@ -122,7 +122,7 @@ module.exports = {
     },
     {
       name: 'DESIGN + CSS WORKSHOP',
-      description: `Self-love and self-empowerment embedded in design and code.`,
+      details: `Self-love and self-empowerment embedded in design and code.`,
       startDateTime: new Date('February 18, 2017 10:00'),
       endDateTime: new Date('February 19, 2017 16:00'),
       location: {
@@ -149,7 +149,7 @@ module.exports = {
     },
     {
       name: 'WORKSHOP: GAME DAY',
-      description: `Video game building workshop + friendly Mario Kart tournament with pizza and beverages! Coffee and snacks all day.`,
+      details: `Video game building workshop + friendly Mario Kart tournament with pizza and beverages! Coffee and snacks all day.`,
       startDateTime: new Date('July 29, 2017 9:00'),
       endDateTime: new Date('July 29, 2017 17:00'),
       location: {
@@ -181,7 +181,7 @@ module.exports = {
     {
       name: 'Unhackathon: Design Thinking w/ IBM and other workshops',
       type: 'Unhackathon',
-      description: `Color Coded and IBM are hosting a one day event that’ll mix learning, creating, wellness, and overall good vibes, while empowering women founders, creatives, and ideators.`,
+      details: `Color Coded and IBM are hosting a one day event that’ll mix learning, creating, wellness, and overall good vibes, while empowering women founders, creatives, and ideators.`,
       location: {
         name: 'ISL',
         address: '641 S ST NW, FL 1, WASHINGTON, DC 20001',
